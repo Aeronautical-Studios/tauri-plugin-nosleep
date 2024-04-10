@@ -10,12 +10,23 @@ rust-version = "1.57"
 [dependencies]
 serde_json = "1.0"
 serde = { version = "1.0", features = [ "derive" ] }
-tauri = { version = "1.0.0-rc.8", features = ["api-all"] }
+tauri = { version = "2.0.0-beta", features = [] }
 tauri-plugin-nosleep = { path = "../../../" }
+tauri-plugin-http = "2.0.0-beta.4"
+tauri-plugin-os = "2.0.0-beta.3"
+tauri-plugin-fs = "2.0.0-beta.4"
+tauri-plugin-shell = "2.0.0-beta.3"
+tauri-plugin-dialog = "2.0.0-beta.4"
+tauri-plugin-process = "2.0.0-beta.3"
+tauri-plugin-notification = "2.0.0-beta.3"
+tauri-plugin-clipboard-manager = "2.1.0-beta.0"
 
 [build-dependencies]
-tauri-build = { version = "1.0.0-rc.7", features = [] }
+tauri-build = { version = "2.0.0-beta", features = [] }
 
 [features]
 default = [ "custom-protocol" ]
 custom-protocol = [ "tauri/custom-protocol" ]
+
+[target."cfg(not(any(target_os = \"android\", target_os = \"ios\")))".dependencies]
+tauri-plugin-global-shortcut = "2.0.0-beta.3"
