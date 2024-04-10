@@ -1,6 +1,4 @@
-# tauri-plugin-nosleep
-
-![Test](https://github.com/pevers/tauri-plugin-nosleep/workflows/Test/badge.svg)
+# tauri-plugin-nosleep-fork
 
 Tauri plugin to block the power save functionality in the OS
 
@@ -13,18 +11,31 @@ fn main() {
 }
 ```
 
+
 Add the NPM package.
 
 ```console
-npm install tauri-plugin-nosleep-api
+npm install tauri-plugin-nosleep-api-fork
 # or
-yarn add tauri-plugin-nosleep-api
+yarn add tauri-plugin-nosleep-api-fork
 ```
+
+
+Then add these permissions to your App capabilities.
+
+```json
+{"permissions": [
+    "nosleep:allow-unblock",
+    "nosleep:allow-block",
+  ]
+}
+```
+
 
 Use this within TS/JS.
 
 ```js
-import { block, NoSleepType, unblock } from 'tauri-plugin-nosleep-api'
+import { block, NoSleepType, unblock } from 'tauri-plugin-nosleep-api-fork'
 block(NoSleepType.PreventUserIdleDisplaySleep);
 // To unblock whenever you are done
 unblock();
