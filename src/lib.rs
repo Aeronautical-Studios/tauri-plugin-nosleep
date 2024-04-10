@@ -53,7 +53,7 @@ async fn unblock<R: Runtime>(
 pub fn init<R: Runtime>() -> TauriPlugin<R> {
     Builder::new("nosleep")
         .invoke_handler(tauri::generate_handler![block, unblock])
-        .setup(|app| {
+        .setup(|app, _api| {
             app.manage(NoSleepState {
                 no_sleep: Mutex::new(NoSleep::new()?),
             });

@@ -13,7 +13,7 @@ exclude = ["/examples", "/webview-dist", "/webview-src", "node_modules"]
 readme = "README.md"
 
 [dependencies]
-tauri = { version = "1.0.0-rc.8" }
+tauri = { version = "2.0.0-beta" }
 serde = "1.0"
 thiserror = "1.0"
 nosleep = { version = "0.2.1", features = ["serde"] }
